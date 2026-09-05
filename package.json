@@ -41,6 +41,6 @@
     "retention": "none"
   },
   "scripts": {
-    "test": "node --test --test-isolation=none tests"
+    "test": "node --test --test-isolation=none tests/worldbook.test.mjs tests/matcher.test.mjs tests/assembler.test.mjs tests/store.test.mjs tests/scope.test.mjs tests/scope-store.test.mjs"
   }
 }
