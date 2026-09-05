@@ -1,0 +1,46 @@
+{
+  "name": "dsh-universal-worldbook",
+  "version": "1.0.0",
+  "private": true,
+  "description": "通用世界书：逐请求提示词插入，无持久化上下文污染，支持索引式条目+模型主动搜索，兼容酒馆。",
+  "type": "module",
+  "main": "host-plugin.js",
+  "exports": {
+    ".": "./host-plugin.js",
+    "./lib": "./lib/index.js",
+    "./client": "./client.js"
+  },
+  "files": [
+    "host-plugin.js",
+    "client.js",
+    "lib",
+    "samples",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TritiumWang/dsh-universal-worldbook.git"
+  },
+  "dsh": {
+    "plugin": true,
+    "client": {
+      "platform": "web"
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "disclosure": {
+    "cloud": false,
+    "network": [],
+    "offlineMode": true,
+    "apiKeys": [],
+    "permissions": "仅本地读写 DSH_HOME/WorldBook;注册只读工具 lore_lookup 与独立 UI;无网络外发",
+    "jurisdiction": [],
+    "retention": "none"
+  },
+  "scripts": {
+    "test": "node --test --test-isolation=none tests"
+  }
+}

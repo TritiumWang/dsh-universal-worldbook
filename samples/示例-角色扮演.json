@@ -1,0 +1,181 @@
+{
+  "entries": {
+    "0": {
+      "uid": 0,
+      "key": [],
+      "comment": "剧情基调 (常驻)",
+      "content": "以第二人称叙述，数值仅供参考理解，不要在正文中出现数值，环境与角色反应先于结果描写。",
+      "constant": true,
+      "selective": false,
+      "selectiveLogic": 0,
+      "order": 10,
+      "disable": false
+    },
+    "1": {
+      "uid": 1,
+      "key": [
+        "敌人",
+        "战斗",
+        "遭遇",
+        "遇袭",
+        "遇敌"
+      ],
+      "keysecondary": [],
+      "comment": "敌人索引 (查询示例)",
+      "content": "【敌人索引】本场景可能出现的敌人：盗贼、土匪、死灵法师。若需要某类的详细资料，且本轮参考信息中不存在，用 lore_lookup 查询所选类型的资料后再演出。剧情需要生成敌人时，从上述列表中合理选择。",
+      "constant": false,
+      "selective": false,
+      "selectiveLogic": 0,
+      "order": 30,
+      "disable": false
+    },
+    "2": {
+      "uid": 2,
+      "key": [
+        "盗贼"
+      ],
+      "keysecondary": [],
+      "comment": "盗贼 (查询目标)",
+      "content": "【盗贼】HP 12 · AC 15 · 匕首 1d4 · 技能:偷窃、潜行、闪避。盗贼只会在夜晚出现。",
+      "constant": false,
+      "selective": false,
+      "selectiveLogic": 0,
+      "order": 40,
+      "disable": false
+    },
+    "3": {
+      "uid": 3,
+      "key": [
+        "土匪"
+      ],
+      "keysecondary": [],
+      "comment": "土匪 (查询目标)",
+      "content": "【土匪】HP 18 · AC 12 · 弯刀 1d6 · 技能:威吓、抢掠。土匪只会在荒野出现。",
+      "constant": false,
+      "selective": false,
+      "selectiveLogic": 0,
+      "order": 50,
+      "disable": false
+    },
+    "4": {
+      "uid": 4,
+      "key": [
+        "死灵法师"
+      ],
+      "keysecondary": [],
+      "comment": "死灵法师 (查询目标)",
+      "content": "【死灵法师】HP 30 · AC 10 · 法术:骷髅召唤、衰老、亡者低语。死灵法师只会在墓园出现。",
+      "constant": false,
+      "selective": false,
+      "selectiveLogic": 0,
+      "order": 60,
+      "disable": false
+    },
+    "5": {
+      "uid": 5,
+      "key": [
+        "遭遇",
+        "遇敌",
+        "战斗"
+      ],
+      "keysecondary": [
+        "盗贼",
+        "土匪",
+        "死灵法师"
+      ],
+      "comment": "战斗节奏 (逻辑示例：与所有)",
+      "content": "【战斗节奏】当三种敌人全部在场时，视为大规模战斗，敌人需要分波次进攻，避免一回合清场。",
+      "constant": false,
+      "selective": true,
+      "selectiveLogic": 3,
+      "order": 80,
+      "disable": false
+    },
+    "6": {
+      "uid": 6,
+      "key": [
+        "敌人",
+        "战斗",
+        "遭遇",
+        "遇袭",
+        "遇敌",
+        "盗贼",
+        "土匪",
+        "死灵法师"
+      ],
+      "keysecondary": [],
+      "comment": "<敌人> (拼接示例)",
+      "content": "<敌人>",
+      "constant": false,
+      "vectorized": false,
+      "selective": false,
+      "selectiveLogic": 0,
+      "addMemo": true,
+      "order": 20,
+      "position": 0,
+      "disable": false,
+      "excludeRecursion": false,
+      "preventRecursion": false,
+      "delayUntilRecursion": false,
+      "probability": 100,
+      "useProbability": true,
+      "depth": 4,
+      "group": "",
+      "groupWeight": 100,
+      "scanDepth": null,
+      "caseSensitive": null,
+      "matchWholeWords": null,
+      "useGroupScoring": null,
+      "automationId": "",
+      "role": null,
+      "sticky": 0,
+      "cooldown": 0,
+      "delay": 0,
+      "triggers": [],
+      "displayIndex": 0
+    },
+    "10": {
+      "uid": 10,
+      "key": [
+        "敌人",
+        "战斗",
+        "遭遇",
+        "遇袭",
+        "遇敌",
+        "盗贼",
+        "土匪",
+        "死灵法师"
+      ],
+      "keysecondary": [],
+      "comment": "</敌人> (拼接结束)",
+      "content": "</敌人>",
+      "constant": false,
+      "vectorized": false,
+      "selective": false,
+      "selectiveLogic": 0,
+      "addMemo": true,
+      "order": 70,
+      "position": 0,
+      "disable": false,
+      "excludeRecursion": false,
+      "preventRecursion": false,
+      "delayUntilRecursion": false,
+      "probability": 100,
+      "useProbability": true,
+      "depth": 4,
+      "group": "",
+      "groupWeight": 100,
+      "scanDepth": null,
+      "caseSensitive": null,
+      "matchWholeWords": null,
+      "useGroupScoring": null,
+      "automationId": "",
+      "role": null,
+      "sticky": 0,
+      "cooldown": 0,
+      "delay": 0,
+      "triggers": [],
+      "displayIndex": 0
+    }
+  }
+}

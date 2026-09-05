@@ -1,0 +1,155 @@
+{
+  "entries": {
+    "0": {
+      "uid": 0,
+      "key": [],
+      "comment": "编程协作原则（仅做示例，不如写进AGENT.md里）",
+      "content": "【协作原则】：①改代码前先读现状与报错出处，不做无依据改动；②每次改动给出验证方法；③不擅自全局装包/改配置，重要操作先问；④禁止自作主张添加用户未要求的功能。\n",
+      "constant": true,
+      "selective": false,
+      "selectiveLogic": 0,
+      "order": 10,
+      "disable": true
+    },
+    "1": {
+      "uid": 1,
+      "key": [
+        "python",
+        "py"
+      ],
+      "comment": "Python",
+      "content": "【Python】代码按 PEP8:类型标注 + docstring;字符串优先 f-string;列表推导适度,复杂逻辑拆函数。",
+      "constant": false,
+      "selective": false,
+      "selectiveLogic": 0,
+      "order": 30,
+      "disable": false
+    },
+    "2": {
+      "uid": 2,
+      "key": [
+        "unity",
+        "u3d"
+      ],
+      "comment": "Unity",
+      "content": "【Unity】先小步改动并进编辑器验证;注意生命周期(Update/协程/事件)与引用丢失;UI 改动保留入口。",
+      "constant": false,
+      "selective": false,
+      "selectiveLogic": 0,
+      "order": 40,
+      "disable": false
+    },
+    "3": {
+      "uid": 3,
+      "key": [
+        "/bug ?#?[0-9]+/i"
+      ],
+      "keysecondary": [],
+      "comment": "Bug 工单 (正则关键词示例)",
+      "content": "【Bug 工单】按此流程:复现 → 定位报错出处与直接上层调用 → 最小修复 → 回归验证;诊断别扩大范围。",
+      "constant": false,
+      "selective": false,
+      "selectiveLogic": 0,
+      "order": 50,
+      "disable": false
+    },
+    "4": {
+      "uid": 4,
+      "key": [
+        "选型",
+        "决定",
+        "选定",
+        "选择",
+        "优劣"
+      ],
+      "keysecondary": [
+        "unity",
+        "ue",
+        "godot"
+      ],
+      "comment": "引擎选型意见 (逻辑示例：与所有)",
+      "content": "需要决定引擎选型时，列出 功能适配度/兼容性/成本 后再给出建议，由用户最终拍板。",
+      "constant": false,
+      "selective": true,
+      "selectiveLogic": 3,
+      "order": 60,
+      "disable": false
+    },
+    "7": {
+      "uid": 7,
+      "key": [
+        "注释",
+        "标记"
+      ],
+      "keysecondary": [],
+      "comment": "注释规范",
+      "content": "【注释规范】：仅做功能性和阐释性注释（如：说明功能，记录设计意图），不记录决策（如：用户决断xxx）或日期（如：年月日），不包含索引（如：阶段5, 方案D等），不记录过程/未采用/失败的方案（如：最终架构从xxx更改而来）。\n",
+      "constant": false,
+      "vectorized": false,
+      "selective": false,
+      "selectiveLogic": 0,
+      "addMemo": true,
+      "order": 20,
+      "position": 0,
+      "disable": false,
+      "excludeRecursion": false,
+      "preventRecursion": false,
+      "delayUntilRecursion": false,
+      "probability": 100,
+      "useProbability": true,
+      "depth": 4,
+      "group": "",
+      "groupWeight": 100,
+      "scanDepth": null,
+      "caseSensitive": null,
+      "matchWholeWords": null,
+      "useGroupScoring": null,
+      "automationId": "",
+      "role": null,
+      "sticky": 0,
+      "cooldown": 0,
+      "delay": 0,
+      "triggers": [],
+      "displayIndex": 0
+    },
+    "8": {
+      "uid": 8,
+      "key": [
+        "XML"
+      ],
+      "keysecondary": [
+        "注释",
+        "标记"
+      ],
+      "comment": "XML注释规范 (逻辑示例：与任意)",
+      "content": "【XML注释格式】<!--注释内容-->；特别注意：注释内容中不能使用连续的`--`作为分隔线，使用`==`代之。\n",
+      "constant": false,
+      "vectorized": false,
+      "selective": true,
+      "selectiveLogic": 0,
+      "addMemo": true,
+      "order": 70,
+      "position": 0,
+      "disable": false,
+      "excludeRecursion": false,
+      "preventRecursion": false,
+      "delayUntilRecursion": false,
+      "probability": 100,
+      "useProbability": true,
+      "depth": 4,
+      "group": "",
+      "groupWeight": 100,
+      "scanDepth": null,
+      "caseSensitive": null,
+      "matchWholeWords": null,
+      "useGroupScoring": null,
+      "automationId": "",
+      "role": null,
+      "sticky": 0,
+      "cooldown": 0,
+      "delay": 0,
+      "triggers": [],
+      "displayIndex": 0
+    }
+  }
+}

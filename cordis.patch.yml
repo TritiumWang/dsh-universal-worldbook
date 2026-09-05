@@ -1,0 +1,7 @@
+# dsh-universal-worldbook bundle layer:把插件行挂进组合(与 dsh plugin add/remove 对账的 dsh.bundle 配套)。
+# 安装方式二选一皆可,同一份声明:
+#   - 桌面手动挂载:在 ~/.dsh/cordis.patch.yml 追加下方 insert(或直接依赖本文件内容)
+#   - 官方 CLI:    dsh plugin --profile web add <registry-pkg|git|./本包|.tgz>
+- insert:
+    - id: dsh-universal-worldbook
+      name: dsh-universal-worldbook
