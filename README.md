@@ -1,14 +1,14 @@
-# dsh-universal-worldbook
+# dsh-universal-worldbook / 通用世界书
 
 DSH通用世界书/临时提示词注入器：
 
-关键字 / 正则 / 常驻触发的提示词片段，经 `llm/stream` 请求级改写临时注入到任意会话（角色扮演、编程、写作…），永不写入会话历史。
+关键字 / 正则 / 常驻触发的提示词片段，经 `llm/stream` 请求级改写临时注入到任意会话场景（角色扮演、编程、科研…），永不写入会话历史。
 
 主体思路仍然是酒馆式的提示词预组装+上下文隔离，但增加了检索功能，允许agent自主查阅世界书条目，查询到的内容同样仅在本轮生效，不会在后续对话的context中出现。
 
-我尽量保证了UI理解成本最低：世界书按工作区分层决定哪些生效，条目布局基本还原酒馆风格，额外加了拖动排序和命中条目预览功能
+尽量保证了UI简洁，理解成本最低：世界书按工作区决定哪些生效，条目布局基本还原酒馆风格，额外加了拖动排序和命中条目预览功能
 
-插入位置恒定为D0前部（拼接在用户最新消息之前），缓存在D2之前全部命中，不在整个消息头部插入（导致缓存全部破坏）。
+插入位置恒定为D0前部（拼接在用户最新消息之前，身份为user），缓存在D2之前全部命中，不在整个消息头部插入（会导致缓存全部破坏）。
 
 独立小功能，尽量与其他功能解耦，数据兼容酒馆世界书。
 
@@ -34,13 +34,7 @@ DSH通用世界书/临时提示词注入器：
 
 ## 发布与市场收录
 
-本仓库遵循「DSH 插件市场收录规范 STANDARD.md」(随桌面市场分发,规范本体见市场仓库):根 `package.json` 声明 `dsh`(含 `plugin`、`client.platform: web`、`bundle.patch`)→ 市场判定为 **cordis-plugin**,按管线自动完成「复制到 `~/.dsh/profiles/web/node_modules/<pkg>` → 注册 patch → 重启」。仓库侧无安装脚本、无第三方运行时依赖。
-
-发布清单(每次发版):
-1. 填 `package.json` 的 `repository.url` 为真实仓库;
-2. 发布到 GitHub 并在仓库 Settings → Topics 添加 **`dsh-plugin`**(可加 `dsh`、`deepseek-harness`、`cordis-plugin`),市场约 2h 自动收录;
-3. **bump `version`**(市场靠它做更新检测);改代码必发版,否则"更新"不出现;
-4. 卸载由市场完成(删目录 + 移除 patch)。
+本仓库遵循「DSH 插件市场收录规范 STANDARD.md」(随桌面市场分发,规范本体见市场仓库):根 `package.json` 声明 `dsh`(含 `plugin`、`client.platform: web`、`bundle.patch`)→ 市场判定为 **cordis-plugin**,按管线自动完成「复制到 `~/.dsh/profiles/web/node_modules/<pkg>` → 注册 patch → 重启」。仓库侧无安装脚本、无第三方运行时依赖; 更新 bump `version`(市场自动靠它做更新检测); 卸载由市场完成(删目录 + 移除 patch)。
 
 ## 数据与作用域
 
@@ -49,7 +43,7 @@ DSH通用世界书/临时提示词注入器：
 - 顺序:`index.json`;通用头/尾:`format.json`;行为设置:`settings.json`(scanDepth / hitPreview)
 - `lore_lookup` 只查**当前作用域已启用**条目,与注入同源。
 
-## 诊断(默认全关,发布态不落盘)
+## 诊断功能(发布态默认全关)
 
 | 环境变量 | 作用 |
 |---|---|
@@ -57,14 +51,5 @@ DSH通用世界书/临时提示词注入器：
 | `DSH_UWB_JOURNAL=1` | 落盘注入台账(命中明细)到 `WorldBook/.injections/<sessionId>.jsonl`(24h 自清) |
 | `DSH_UWB_DEBUG=1` | `.uwb-debug.log` 追加 INFO 级(注册自检/D1 锚定等);错误/警告始终记录 |
 
-相关代码保留,仅以环境变量门控。
-
-## 开发
-
-```bash
-# 单测(纯函数层:worldbook/matcher/assembler/store/scope)
-npm test
-# 等价于(Windows 沙箱下需 --test-isolation=none):
-node --test --test-isolation=none tests
-```
+相关代码以环境变量门控关闭, debug / 后续开发备用。
 
