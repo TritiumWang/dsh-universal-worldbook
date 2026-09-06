@@ -22,19 +22,11 @@ DSH通用世界书/临时提示词注入器：
 - **UI(独立窗口)**:世界书/条目 CRUD、JSON 导入导出、作用域开关、世界书条目复原酒馆风格UI、整卡/整行拖拽排序、自动保存(切换/关闭落盘)、通用头/尾提示词块、扫描深度滑块 + 命中预览(基于会话真实消息实时计算)。
 - **数据**:`DSH_HOME/WorldBook/`,酒馆世界书兼容的 JSON 无损读写(一些过于冗杂的ST世界书功能未开发，未知字段保留),数据与插件代码分离,升级不丢。
 
-## 快速开始(DSH Desktop)
-
-0. 建议在DSH 插件市场直接打包下载安装。DSH 插件市场：[DSH-Plugins-Marketplace](https://github.com/bradeGithub/DSH-Plugins-Marketplace)
-1. 将本包放入 DSH 的应用目录并建立到 `node_modules/dsh-universal-worldbook` 的链接(桌面环境使用 junction);host 半区即插即用。
-2. 在主机组合(`cordis.patch.yml`)以 `- insert:` 追加插件行挂载(host 无 preset 依赖)。
-3. 首次运行后在左侧栏底部出现「世界书」入口(设置键上方),可新建/导入世界书并启用;若数据目录无同名文件,**首次启动自动导入自带 3 本示例世界书**(示例-编程 / 示例-角色扮演 / 示例-科研),**默认非激活**(不写 enabled.json),删除后不再复活(以 `.samples-seeded` 标记)。
-4. 在对话中写入匹配关键词即可触发注入;启用 detail 条目后模型可通过 `lore_lookup` 工具按需取详情。
-
-> 客户端(UI)与 host 代码在进程启动时加载,改动需重启 DSH 生效。
-
-## 发布与市场收录
-
-本仓库遵循「DSH 插件市场收录规范 STANDARD.md」(随桌面市场分发,规范本体见市场仓库):根 `package.json` 声明 `dsh`(含 `plugin`、`client.platform: web`、`bundle.patch`)→ 市场判定为 **cordis-plugin**,按管线自动完成「复制到 `~/.dsh/profiles/web/node_modules/<pkg>` → 注册 patch → 重启」。仓库侧无安装脚本、无第三方运行时依赖; 更新 bump `version`(市场自动靠它做更新检测); 卸载由市场完成(删目录 + 移除 patch)。
+## 安装
+网页版
+`dsh plugin --profile web add github:TritiumWang/dsh-universal-worldbook`
+桌面版
+`dsh plugin --profile desktop add github:TritiumWang/dsh-universal-worldbook`
 
 ## 数据与作用域
 
