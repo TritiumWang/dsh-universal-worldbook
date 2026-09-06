@@ -23,10 +23,12 @@ DSH通用世界书/临时提示词注入器：
 - **数据**:`DSH_HOME/WorldBook/`,酒馆世界书兼容的 JSON 无损读写(一些过于冗杂的ST世界书功能未开发，未知字段保留),数据与插件代码分离,升级不丢。
 
 ## 安装
-网页版
-`dsh plugin --profile web add github:TritiumWang/dsh-universal-worldbook`
-桌面版
-`dsh plugin --profile desktop add github:TritiumWang/dsh-universal-worldbook`
+网页版：
+```dsh plugin --profile web add github:TritiumWang/dsh-universal-worldbook```
+
+
+桌面版：
+```dsh plugin --profile desktop add github:TritiumWang/dsh-universal-worldbook```
 
 ## 数据与作用域
 
